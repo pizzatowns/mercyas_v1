@@ -9,7 +9,6 @@ export default function Manually() {
     <View className="mt-5">
       <MyCalendar />
       <DropDownMenu/>
- 
     </View>
   );
 }

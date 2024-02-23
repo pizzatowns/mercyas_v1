@@ -62,7 +62,7 @@ data = {
             }
         ]
 }
-const presetColor = ["#00315C", "#58508A", "#BC5111", "#FA6361"]
+const presetColor = ["#02a0a6", "#d9e805", "#f58402", "#FA6361"]
 const Home = () => {
     const net_incomes = data.net_incomes
     const expenses = data.expenses

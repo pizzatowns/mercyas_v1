@@ -28,7 +28,7 @@ const Scan = () => {
             {isManual ?
                 <Manually />
                 :
-                <View className=" mt-4 w-4/5 h-4/6 ">
+                <View className=" mt-4 w-4/5 h-4/6">
                     <MyCamera />
 
                     <View className="flex flex-row w-full justify-evenly mt-4">

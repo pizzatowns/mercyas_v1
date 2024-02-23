@@ -9,7 +9,6 @@ export default function PhoneNumsVerification({
   const arrayList = [1, 2, 3, 4, 5, 6];
   const phoneNumberArray = Array(6);
   const [isNumber, setIsNumber] = useState(false);
-
   const handleLogin = () => {
     navigation.navigate("TabNavigation");
   };
@@ -36,6 +35,8 @@ export default function PhoneNumsVerification({
   const handlePhoneNums = (value, index) => {
     let count = 0;
     phoneNumberArray[index] = value;
+    
+
     phoneNumberArray.map((value, index) => {
       if (value == arrayList[index]) {
         count++;
@@ -57,6 +58,7 @@ export default function PhoneNumsVerification({
             placeholder="--"
             className="border-2 border-solid border-black text-center h-[50px] w-[40px]"
             onChangeText={(input) => handlePhoneNums(input, index)}
+            editable={!isNumber}
           />
         ))}
       </View>
