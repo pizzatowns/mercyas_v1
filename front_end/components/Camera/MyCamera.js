@@ -33,49 +33,35 @@ const MyCamera = () => {
   if (showCamera) {
     return (
       <View className="flex-1 items-center gap-y-2">
-        <View className="flex-1 flex-row">
+        <View className="flex-1 flex-row border rounded-xl p-1 bg-black">
           <Camera
-            ref={(ref) => setCamera(ref)}
-            className="flex-1 rounded-xl"
+            ref={ref => setCamera(ref)}
+            className="flex-1"
             type={CameraType.back}
           
           />
         </View>
 
-        <TouchableOpacity
-          className="bg-gray-300 border border-sky-500 rounded-xl"
-          onPress={() => takePicture()}
-        >
-          <Text className="p-1">Take Picture</Text>
+        <TouchableOpacity className="bg-gray-300 border border-sky-500 rounded-xl" onPress={() => takePicture()}>
+          <Text className="p-1" >Take Picture</Text>
         </TouchableOpacity>
+
       </View>
     );
   } else {
     return (
       <View className="flex-1 items-center gap-y-2">
-        <View className="flex-1  w-full">
-          {image ? (
-            <Image
-              className="flex-1"
-              source={{
-                uri: `${image}`,
-              }}
-            />
-          ) : (
-            <Text>None</Text>
-          )}
+        <View className="flex-1 w-full p-1 border rounded-xl bg-black">
+          {image ? <Image className="flex-1" source={{ uri: `${image}` }} /> : <Text>None</Text>}
         </View>
 
         {/* <TouchableOpacity title="Take Picture" onPress={() => takePicture()} /> */}
-        <View className="flex-row space-x-2">
-          <TouchableOpacity
-            className="bg-gray-300  border border-sky-500 rounded-xl w-14 items-center"
-            onPress={() => retakePicture()}
-          >
-            <Text className="p-1">Retake</Text>
+        <View className="flex-row gap-x-4">
+          <TouchableOpacity className="bg-gray-300 border border-sky-500 rounded-xl w-14 items-center" onPress={() => retakePicture()}>
+            <Text className="p-1" >Retake</Text>
           </TouchableOpacity>
           <TouchableOpacity className="bg-gray-300 border border-sky-500 rounded-xl w-14 items-center">
-            <Text className="p-1">Done</Text>
+            <Text className="p-1" >Done</Text>
           </TouchableOpacity>
         </View>
       </View>
